@@ -1,0 +1,18 @@
+name = "FEConvergenceExperiments"
+uuid = "d51530a6-9d23-5aa7-8224-7249a654c56c"
+
+[deps]
+ApproxFun = "28f2ccd6-bb30-5033-b560-165f7b14dc2f"
+BasisFunctions = "4343a256-5453-507d-8aad-01a9d7189916"
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+DomainSets = "5b8099bc-c8ec-5219-889f-1d9e522a28bf"
+FrameFun = "bbafa164-4497-5d18-87cf-33e911f89480"
+GaussQuadrature = "d54b0c1a-921d-58e0-8e36-89d8069c0969"
+GenericLinearAlgebra = "14197337-ba66-59df-a3e3-ca00e7dcff7a"
+GenericSVD = "01680d73-4ee2-5a08-a1aa-533608c188bb"
+IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+JLD = "4138dd39-2aa7-5051-a626-17a0bb65d9c8"
+LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
+PGFPlots = "3b7a836e-365b-5785-a47d-02c71176b4aa"
+QuadGK = "1fd47b50-473d-5c70-9696-f719f8f3bcdc"
+SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
