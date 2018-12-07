@@ -30,11 +30,12 @@ H3 = x->spline_function(3, a, x)
 H9 = x->spline_function(9, a, x)
 H15 = x->spline_function(15, a, x)
 # Generate Laguerre Quadrature points (used in Steepest descent)
-if isfile("/../data/quad_numbersK$(prec)M$(M).jld")
+if isfile(thispath*"/../data/quad_numbersK$(prec)M$(M).jld")
     println("Load quadrature")
     laguerre_x0, laguerre_w0, laguerre_x, laguerre_w = load(thispath*"/../data/quad_numbersK$(prec)M$(M).jld","laguerre_x0","laguerre_w0", "laguerre_x", "laguerre_w")
     @info("Quadrature Loaded")
 else
+    @warn thispath*"/../data/quad_numbersK$(prec)M$(M).jld does not exist"
     @info "Creating quadrature"
     using GaussQuadrature
     laguerre_x0, laguerre_w0 = laguerre(M, real(ELT)(0))
