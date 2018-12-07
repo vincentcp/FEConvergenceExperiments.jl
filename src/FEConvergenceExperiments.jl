@@ -3,6 +3,7 @@ module FEConvergenceExperiments
 using BasisFunctions, FrameFun, DomainSets, QuadGK, JLD, SpecialFunctions, DelimitedFiles, IJulia, PGFPlots, ApproxFun, LaTeXStrings
 thispath = splitdir(@__FILE__)[1]
 ELT = BigFloat; prec = 512;
+setprecision(prec);
 # Random interior point
 r = ELT(.29384)
 # Right hand side
@@ -38,7 +39,7 @@ else
     using GaussQuadrature
     laguerre_x0, laguerre_w0 = laguerre(M, real(ELT)(0))
     laguerre_x, laguerre_w = laguerre(M+20, real(ELT)(0))
-    JLD.save(thispath*"/../data/quad_numbersK$(K)M$(M).jld", "laguerre_x0",laguerre_x0, "laguerre_w0",laguerre_w0,"laguerre_x",laguerre_x,"laguerre_w",laguerre_w)
+    JLD.save(thispath*"/../data/quad_numbersK$(prec)M$(M).jld", "laguerre_x0",laguerre_x0, "laguerre_w0",laguerre_w0,"laguerre_x",laguerre_x,"laguerre_w",laguerre_w)
 end
 # Right hand sides
 
@@ -126,6 +127,7 @@ rhs(B::ExtensionFrame) =
     [Complex(rhsi(convert(Int,j))) for j in ordering(B), rhsi in rhss]
 
 function create_data()
+    setprecision(prec)
     Ns = [(1<<k)+1 for k in 1:convert(Int,log2(K))]
     errorl = zeros(Float64, length(Ns), length(k))
     errorr = similar(errorl)
