@@ -9,7 +9,7 @@ r = ELT(.29384)
 # Right hand side
 a = ELT(1//2)
 # maximum frequency
-K = 64
+K = 128
 # M number of Laguere quadrature points
 M = 5000
 # tolerance of quadgk
